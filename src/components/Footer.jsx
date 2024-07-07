@@ -10,8 +10,8 @@ import playStore from '../assets/images/playstore.png'
 
 const Footer = () => {
     return (
-		<div className="bg-black">
-        <footer className=" container mx-auto px-4 divide-y text-white dark:bg-gray-100 dark:text-gray-800">
+		<div className="bg-black divide-y divide-gray-600">
+        <footer className=" container mx-auto px-4  text-white dark:bg-gray-100 dark:text-gray-800">
 	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="space-y-6 ">
 			<span className="self-center text-lg font-semibold">Exclusive</span>
@@ -95,8 +95,8 @@ const Footer = () => {
 			</div>
 		{/* </div> */}
 	</div>
-	<div className="py-6 text-sm text-center dark:text-gray-600">© 1968 Jaycodes build. All rights reserved.</div>
 </footer>
+<div className="py-6 text-sm text-center text-white dark:text-gray-600">© 1968 Jaycodes build. All rights reserved.</div>
 </div>
      );
 }
