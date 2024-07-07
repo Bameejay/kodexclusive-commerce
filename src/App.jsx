@@ -1,11 +1,26 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Blogs from "./components/Blogs";
+import Contact from "./components/Contact";
+import NoPage from "./components/NoPage";
 
-function App() {
 
+
+
+
+
+export default function App() {
   return (
-    <div>
-      <p className='bg-yellow-600 text-center text-white text-xs p-2'>I will like to continue using tailwindcss to style, because it is the best</p>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
