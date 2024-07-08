@@ -17,11 +17,12 @@ const Navbar = () => {
             </select>
         </div>
 
-        <nav className="relative container bg-white mx-auto p-6">
+        <nav className="relative container bg-white mx-auto py-2 px-0">
+            
             {/* Flex container */}
             <div className="flex items-center justify-between">
                 {/* Logo */}
-                <div className="pt-2 text-secondaryColor text-xl font-bold cursor-pointer">Exclusive</div>
+                    <div className="pt-2 text-secondaryColor text-xl font-bold cursor-pointer">Exclusive</div>
                 {/* Menu-Items */}
                 <div className="hidden md:flex space-x-6">
                     <Link to="/" className="text-sm text-secondaryColor font-medium">Home</Link>
@@ -31,6 +32,8 @@ const Navbar = () => {
                 </div>
             </div>
         </nav>
+        <div className="w-full h-0.5 bg-gray-400 mb-4"></div>
+
         </>
      );
 }

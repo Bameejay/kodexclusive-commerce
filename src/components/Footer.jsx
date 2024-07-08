@@ -11,7 +11,7 @@ import playStore from '../assets/images/playstore.png'
 const Footer = () => {
     return (
 		<div className="bg-black divide-y divide-gray-600">
-        <footer className=" container mx-auto px-4  text-white dark:bg-gray-100 dark:text-gray-800">
+        <footer className=" container mx-auto py-4 px-0 text-white dark:bg-gray-100 dark:text-gray-800">
 	<div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="space-y-6 ">
 			<span className="self-center text-lg font-semibold">Exclusive</span>
