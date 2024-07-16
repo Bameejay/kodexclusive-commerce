@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
@@ -101,7 +101,7 @@ const ProductList = () => {
   const displayedProducts = products.slice(currentIndex, currentIndex + productsPerPage);
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-10 mb-8">
       {showWishlist ? (
         <Wishlist favoriteProducts={favoriteProducts} products={products} />
       ) : (
@@ -209,7 +209,7 @@ const ProductList = () => {
           </div>
           <div className="flex justify-center mt-6">
             <button
-              className="bg-primaryColor text-white px-8 py-2 rounded-md text-sm"
+              className="bg-primaryColor text-white px-8 py-3 rounded-sm text-sm hover:opacity-85"
               onClick={() => setShowWishlist(true)}
             >
               View All Products

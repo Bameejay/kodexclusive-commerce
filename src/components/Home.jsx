@@ -3,11 +3,7 @@ import heroImage from '../assets/images/home_images/heroImage.png'
 import { Link } from 'react-router-dom';
 import { FaGreaterThan } from "react-icons/fa";
 import ProductList from './ProductList';
-
-
-
-
-
+import Category from './Category';
 
 
 
@@ -135,6 +131,9 @@ const Home = () => {
             </div>
 
             <ProductList/>
+            <div className="w-full h-0.5 bg-gray-300 mb-10"></div>
+            <Category/>
+
         </div>
 
 
