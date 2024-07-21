@@ -4,6 +4,9 @@ import Home from "./components/Home";
 import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import NoPage from "./components/NoPage";
+import ProductList from "./components/ProductList";
+import Cart from "./components/carts";
+import Wishlist from './components/Wishlist'
 
 
 
@@ -18,6 +21,9 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="productList" element={<ProductList />} />
+          <Route path="wishList" element={<Wishlist />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

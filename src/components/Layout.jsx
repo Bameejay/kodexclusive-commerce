@@ -1,4 +1,4 @@
-// import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Navbar from './Navbar'
 import Footer from './Footer'
 import Home from './Home';
@@ -9,22 +9,9 @@ const Layout = () => {
     return (  
         <>
         <Navbar/>
-           {/* <nav>
-                <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/blogs">Blogs</Link>
-                </li>
-                <li>
-                    <Link to="/contact">Contact</Link>
-                </li>
-                </ul>
-            </nav> */}
-            {/* <Outlet />  */}
-            <Home/>
-            <Footer/>
+            {/* <Home/> */}
+            <Outlet/>
+        <Footer/>
              
         </>
     );

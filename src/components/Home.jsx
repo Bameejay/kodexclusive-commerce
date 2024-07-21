@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { FaGreaterThan } from "react-icons/fa";
 import ProductList from './ProductList';
 import Category from './Category';
+import BestSellingProduct from './BestSellingProducts'
+
 
 
 
@@ -15,6 +17,7 @@ const Home = () => {
         minutes: 19,
         seconds: 56,
       });
+
     
       useEffect(() => {
         const countdownDate = new Date().getTime() + 30 * 24 * 60 * 60 * 1000; // 3 days from now
@@ -131,9 +134,31 @@ const Home = () => {
             </div>
 
             <ProductList/>
-            <div className="w-full h-0.5 bg-gray-300 mb-10"></div>
+            <div className="w-full h-0.5 bg-gray-300 my-10"></div>
             <Category/>
+            <div className="w-full h-0.5 bg-gray-300 my-10"></div>
 
+            {/* Best Selling Products Section */}
+
+        <div className="flex flex-col mb-4">
+            <div className="flex items-center">
+                <div className="bg-primaryColor w-4 h-10 mr-4 rounded-md"></div>
+                <span className="text-red-500 font-semibold text-sm">This Month</span>
+            </div>
+
+            <div className="flex items-center justify-between mt-2 mb-6">
+                <div className="text-2xl font-semibold">Best Selling Products</div>
+                    <div>
+                        <button
+                        className="bg-primaryColor text-white px-8 py-3 rounded-sm text-sm hover:opacity-85"
+                        >
+                        View All
+                        </button>
+                    </div>
+            </div>
+        </div>
+        <BestSellingProduct/>
+        
         </div>
 
 
