@@ -175,8 +175,8 @@ const Home = () => {
         </div>
         <p className="text-2xl font-bold">New Arrival</p>
 
-        <div className="flex flex-col gap-4 md:flex-row mt-10 mb-20">
-          {/* Left Side */}
+        {/* <div className="flex flex-col gap-4 md:flex-row mt-10 mb-20">
+
           <div className="relative w-1/2">
             <div className="w-full h-auto">
               <img
@@ -191,7 +191,7 @@ const Home = () => {
               <a href="#" className="underline underline-offset-0 text-sm">Shop Now</a>
             </div>
           </div>
-          {/* Right Side */}
+
           <div className=" flex flex-col gap-7 w-1/2">
             <div className="relative">
               <img
@@ -224,7 +224,59 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div> */}
+
+<div className="flex flex-col gap-4 mt-10 mb-20 md:flex-row">
+  {/* Left Side */}
+  <div className="relative w-full md:w-1/2">
+    <div className="w-full h-auto">
+      <img
+        src={playstation}
+        alt="playstation"
+        className="object-contain w-full h-full"
+      />
+    </div>
+    <div className="absolute bottom-8 left-8 text-white space-y-2">
+      <h2 className="font-bold text-xl md:text-2xl">PlayStation 5</h2>
+      <p className="pb-2 text-sm md:text-base">Black and White version of the PS5 coming out on sale</p>
+      <a href="#" className="underline underline-offset-0 text-sm md:text-base">Shop Now</a>
+    </div>
+  </div>
+  {/* Right Side */}
+  <div className="flex flex-col gap-7 w-full md:w-1/2">
+    <div className="relative">
+      <img
+        src={hat}
+        alt="Women's Collections"
+        className="object-contain w-full h-full"
+      />
+      <div className="absolute bottom-8 left-8 text-white space-y-2">
+        <h2 className="font-bold text-xl md:text-2xl">Women's Collections</h2>
+        <p className="pb-2 text-sm md:text-base">Featured woman collections that give you another vibe</p>
+        <a href="#" className="underline underline-offset-0 text-sm md:text-base">Shop Now</a>
+      </div>
+    </div>
+    <div className="flex flex-col gap-4 md:flex-row md:gap-6">
+      <div className="w-full md:w-1/2 relative">
+        <img src={speakers} alt="speakers" className="w-full h-full object-contain" />
+        <div className="absolute bottom-8 left-8 text-white space-y-2">
+          <h2 className="font-bold text-xl md:text-2xl">Speakers</h2>
+          <p className="pb-2 text-sm md:text-base">Amazon wireless speakers</p>
+          <a href="#" className="underline underline-offset-0 text-sm md:text-base">Shop Now</a>
         </div>
+      </div>
+      <div className="w-full md:w-1/2 relative">
+        <img src={perfume} alt="Perfumes" className="w-full h-full object-contain" />
+        <div className="absolute bottom-8 left-8 text-white space-y-2">
+          <h2 className="font-bold text-xl md:text-2xl">Perfume</h2>
+          <p className="pb-2 text-sm md:text-base">Gucci Intense OUD EDP</p>
+          <a href="#" className="underline underline-offset-0 text-sm md:text-base">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   );
