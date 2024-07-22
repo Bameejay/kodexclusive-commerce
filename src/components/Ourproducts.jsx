@@ -2,67 +2,84 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
-import jblImage from '../assets/images/category_images/jbl.png'
+import { faEye, faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Wishlist from "./Wishlist";
-import coat from '../assets/images/bestseliingproduct/The north coat.png'
-import bag from '../assets/images/bestseliingproduct/gucci duffle bag.png'
-import cooler from '../assets/images/bestseliingproduct/RGB cooler.png'
-import bookshelf from '../assets/images/bestseliingproduct/bookshelf.png'
-import brush from '../assets/images/category_images/brush.png'
+import dogFood from '../assets/images/ourproducts_images/dog_food.png'
+import camera from '../assets/images/ourproducts_images/canon_camera.png'
+import laptop from '../assets/images/ourproducts_images/gaming_laptop.png'
+import productset from '../assets/images/ourproducts_images/curologyproduct_set.png'
+import electricCar from '../assets/images/ourproducts_images/electric_car.png'
+import soccerBoots from '../assets/images/ourproducts_images/soccer_boot.png'
+import gamepad from '../assets/images/ourproducts_images/gamepad.png'
+import jacket from '../assets/images/ourproducts_images/satin_jacket.png'
 
 const products = [
   {
     id: 1,
-    discount: "40%",
-    name: "The north coat",
-    currentPrice: "$260",
-    originalPrice: "$360",
-    rating: 4.5,
-    reviews: 65,
-    imageUrl: coat,
+    name: "Breed Dry Dog Food",
+    currentPrice: "$100",
+    rating: 3,
+    reviews: 35,
+    imageUrl: dogFood,
   },
   {
     id: 2,
-    discount: "35%",
-    name: "Gucci dufle bag",
-    currentPrice: "$960",
-    originalPrice: "$1160",
-    rating: 4.8,
-    reviews: 65,
-    imageUrl: bag,
+    name: "CANON EOS DSLR Camera",
+    currentPrice: "$360",
+    rating: 4,
+    reviews: 95,
+    imageUrl: camera,
   },
   {
     id: 3,
-    discount: "30%",
-    name: "RGB Liquid CPU Cooler",
-    currentPrice: "$160",
-    originalPrice: "$170",
+    name: "ASUS FHD Gaming Laptop",
+    currentPrice: "$370",
     rating: 4.9,
-    reviews: 65,
-    imageUrl: cooler,
+    reviews: 325,
+    imageUrl: laptop,
   },
   {
     id: 4,
-    discount: "25%",
-    name: "Small Bookshelf",
-    currentPrice: "$360",
-    originalPrice: "$400",
+    name: "Curology Product Set",
+    currentPrice: "$500",
     rating: 4.7,
-    reviews: 65,
-    imageUrl: bookshelf,
+    reviews: 145,
+    imageUrl: productset,
   },
-  // {
-  //   id: 5,
-  //   discount: "20%",
-  //   name: "S-Series Comfort Sofa",
-  //   currentPrice: "$450",
-  //   originalPrice: "$550",
-  //   rating: 4.8,
-  //   reviews: 50,
-  //   imageUrl: chair,
-  // },
-  // Add more products as needed
+  {
+    id: 5,
+    discount: "NEW",
+    name: "Kids Electric Car",
+    currentPrice: "$960",
+    rating: 5.0,
+    reviews: 65,
+    imageUrl: electricCar,
+  },
+  {
+    id: 6,
+    name: "Jr.Zoom Soccer Cleats",
+    currentPrice: "$1160",
+    rating: 5.0,
+    reviews: 65,
+    imageUrl: soccerBoots,
+  },
+  {
+    id: 7,
+    discount: "NEW",
+    name: "GP11 Shooter USB Gamepad",
+    currentPrice: "$660",
+    rating: 5.0,
+    reviews: 55,
+    imageUrl: gamepad,
+  },
+  {
+    id: 8,
+    name: "Quilted Satin Jacket",
+    currentPrice: "$660",
+    rating: 5.0,
+    reviews: 55,
+    imageUrl: jacket,
+  },
 ];
 
 const ProductList = () => {
@@ -70,7 +87,7 @@ const ProductList = () => {
   const [viewedProducts, setViewedProducts] = useState([]);
   const [showWishlist, setShowWishlist] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const productsPerPage = 4;
+  const productsPerPage = 8;
 
   const toggleFavorite = (productId) => {
     setFavoriteProducts((prev) =>
@@ -88,32 +105,36 @@ const ProductList = () => {
     );
   };
 
-  // const handleNext = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex + productsPerPage < products.length ? prevIndex + productsPerPage : 0
-  //   );
-  // };
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex + productsPerPage < products.length ? prevIndex + productsPerPage : 0
+    );
+  };
 
-  // const handlePrev = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex - productsPerPage >= 0 ? prevIndex - productsPerPage : products.length - productsPerPage
-  //   );
-  // };
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex - productsPerPage >= 0 ? prevIndex - productsPerPage : products.length - productsPerPage
+    );
+  };
 
   const displayedProducts = products.slice(currentIndex, currentIndex + productsPerPage);
 
   return (
-    <div className="container mx-auto py-4 mb-8">
+    <div className="container mx-auto py-10 mb-8">
+            <div className="flex items-center">
+                <div className="bg-primaryColor w-4 h-10 mr-4 rounded-md"></div>
+                <span className="text-red-500 font-semibold text-xl">Our Products</span>
+            </div>
+
       {showWishlist ? (
         <Wishlist favoriteProducts={favoriteProducts} products={products} />
       ) : (
         <div>
 
-            <div className="flex">
-                <div></div>
-                
+            <div className="flex mt-4">
+                <div className="text-2xl font-bold">Explore Our Products</div>
             {/* Navigation Arrows */}
-          {/* <div className="flex gap-4 mb-4 ml-auto">
+          <div className="flex gap-4 mb-4 ml-auto">
             <button
               className="bg-[#F5F5F5] rounded-full flex items-center p-2 shadow-md"
               onClick={handlePrev}
@@ -126,7 +147,7 @@ const ProductList = () => {
             >
               <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
             </button>
-          </div> */}
+          </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -141,9 +162,11 @@ const ProductList = () => {
                     alt={product.name}
                     className="w-full h-60 object-contain rounded-sm border p-12 bg-[#F5F5F5]"
                   />
-                  <div className="absolute top-2 left-2 bg-primaryColor text-white text-xs font-semibold px-4 py-1 rounded">
-                    -{product.discount}
-                  </div>
+                  {product.discount && (
+                    <div className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-4 py-1 rounded">
+                      {product.discount}
+                    </div>
+                  )}
                   <div className="absolute top-2 right-2">
                     <button
                       className="bg-white rounded-full px-1 shadow-md"
@@ -211,54 +234,15 @@ const ProductList = () => {
             ))}
           </div>
           <div className="flex justify-center mt-6">
-            {/* <button
+            <button
               className="bg-primaryColor text-white px-8 py-3 rounded-sm text-sm hover:opacity-85"
               onClick={() => setShowWishlist(true)}
             >
               View All Products
-            </button> */}
+            </button>
           </div>
         </div>
       )}
-
-      {/* Categories Image */}
-
-        <div className="flex flex-col md:flex-row justify-between mt-20 bg-black p-12">
-          <div className="flex-1 flex-col space-y-10">
-            <p className="text-[#00FF66] text-sm">Categories</p>
-            <h3 className="text-4xl text-white font-semibold">Enhance Your Music Experience </h3>
-            <div className="flex flex-row space-x-2">
-              <div className="text-center rounded-full w-16 h-auto bg-white p-2 text-black">
-                <p className="text-sm font-bold">23</p>
-                <p className="text-sm">Hours</p>
-              </div>
-              <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">05</p>
-                <p className="text-sm">Days</p>
-              </div>
-              <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">59</p>
-                <p className="text-sm">Minutes</p>
-              </div>
-              <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">35</p>
-                <p className="text-sm">seconds</p>
-              </div>
-            </div>
-            <div><button className="bg-[#00FF66] py-2 px-6 text-sm font-bold text-white rounded-sm hover:bg-green-600 transition duration-300">Buy Now!</button></div>
-          </div>
-            
-            
-          <div className="flex-1 mt-12 md:mt-0 relative">
-          <div className="absolute -inset-8 flex justify-center items-center">
-            <img src={brush} alt="Brush Stroke" className="w-full h-full object-cover" />
-          </div>
-          <img src={jblImage} alt="JBL Speaker" className="relative w-full h-auto z-10" />
-        </div>
-
-        </div>
-
-
     </div>
   );
 };

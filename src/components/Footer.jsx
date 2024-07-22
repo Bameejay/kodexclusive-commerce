@@ -96,7 +96,7 @@ const Footer = () => {
 		{/* </div> */}
 	</div>
 </footer>
-<div className="py-6 text-sm text-center text-white dark:text-gray-600">© 1968 Jaycodes build. All rights reserved.</div>
+<div className="py-6 text-sm text-center text-white dark:text-gray-600">© 2024 Jaycodes build. All rights reserved.</div>
 </div>
      );
 }
