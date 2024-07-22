@@ -177,7 +177,7 @@ const Home = () => {
 
         <div className="flex flex-col gap-4 md:flex-row mt-10 mb-20">
           {/* Left Side */}
-          <div className="relative">
+          <div className="relative w-1/2">
             <div className="w-full h-auto">
               <img
                 src={playstation}
@@ -185,28 +185,46 @@ const Home = () => {
                 className="object-contain"
               />
             </div>
-            <div className="absolute bottom-20 left-6 text-white">
+            <div className="absolute bottom-8 left-8 text-white space-y-2">
               <h2 className="font-bold">PlayStation 5</h2>
-              <p>Black and White version of the PS5 coming out on sale</p>
-              <a href="#">Shop Now</a>
+              <p className="pb-2">Black and White version of the PS5 coming out on sale</p>
+              <a href="#" className="underline underline-offset-0 text-sm">Shop Now</a>
             </div>
           </div>
           {/* Right Side */}
-          <div className="flex flex-col gap-4">
-            <div className="">
-              <img src={hat} alt="Women's Collections" className="object-contain" />
+          <div className=" flex flex-col gap-7 w-1/2">
+            <div className="relative">
+              <img
+                src={hat}
+                alt="Women's Collections"
+                className="object-contain"
+              />
+              <div className="absolute bottom-8 left-8 text-white space-y-2">
+                <h2 className="font-bold">Women's Collections</h2>
+                <p className="pb-2">Featured woman collections that give you another vibe</p>
+                <a href="#" className="underline underline-offset-0 text-sm">Shop Now</a>
+              </div>
             </div>
-            <div className="flex flex-row gap-4 w-64">
-              <img src={speakers} alt="speakers" />
-              <img src={perfume} alt="Perfumes" />
+            <div className="flex flex-row gap-6">
+              <div className="w-1/2 relative">
+                <img src={speakers} alt="speakers" />
+                <div className="absolute bottom-8 left-8 text-white space-y-2">
+                <h2 className="font-bold">Speakers</h2>
+                <p className="pb-2">Amazon wireless speakers</p>
+                <a href="#" className="underline underline-offset-0 text-sm">Shop Now</a>
+              </div>
+              </div>
+              <div className="w-1/2 relative">
+                 <img src={perfume} alt="Perfumes" />
+                 <div className="absolute bottom-8 left-8 text-white space-y-2">
+                <h2 className="font-bold text-2xl">Perfume</h2>
+                <p className="pb-2">Gucci Intense OUD EDP</p>
+                <a href="#" className="underline underline-offset-0 text-sm">Shop Now</a>
+              </div>
+              </div>
             </div>
           </div>
         </div>
-
-
-
-
-        
       </div>
     </div>
   );
