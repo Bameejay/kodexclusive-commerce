@@ -1,8 +1,9 @@
-import { FaGoogle } from "react-icons/fa";
+// import { FaGoogle } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
 import PhoneCart from "../assets/images/signup_images/phone_cart2.png";
+import googleIcon from "../assets/images/signup_images/google_icon.png"
 
 const SignupPage = () => {
   const validationSchema = Yup.object({
@@ -23,7 +24,7 @@ const SignupPage = () => {
           alt="Shopping cart and mobile phone"
           //   className="w-3/4"
         />
-      </div>
+      </div>  
       <div className="w-1/2 flex items-center justify-center">
         <div className="max-w-md w-full space-y-4">
           <h2 className="text-3xl font-medium text-black">
@@ -110,7 +111,8 @@ const SignupPage = () => {
                   type="button"
                   className="w-full inline-flex items-center justify-center py-4 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  <FaGoogle className="w-5 h-5 mr-2" />
+                  {/* <FaGoogle className="w-5 h-5 mr-2" /> */}
+                  <img src={googleIcon} alt="google_Icon" className="w-5 -h-5 mr-2" />
                   Sign up with Google
                 </button>
               </div>
