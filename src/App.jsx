@@ -8,6 +8,7 @@ import ProductList from "./components/ProductList";
 import Cart from "./components/carts";
 import Wishlist from './components/Wishlist'
 import SignupPage from "./components/Signup";
+import LoginPage from "./components/LoginPage";
 
 
 
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="productList" element={<ProductList />} />
           <Route path="wishList" element={<Wishlist />} />
           <Route path="signup" element={<SignupPage />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
