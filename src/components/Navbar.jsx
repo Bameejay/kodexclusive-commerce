@@ -61,10 +61,10 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
             <button
               onClick={handleMobileMenuToggle}
-              className="mobile-menu-button"
+              className="mobile-menu-button flex"
             >
               {isMobileMenuOpen ? (
                 <FaTimes className="w-6 h-6" />
