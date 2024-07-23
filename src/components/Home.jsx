@@ -161,7 +161,7 @@ const Home = () => {
           <div className="bg-primaryColor w-4 h-10 mr-4 rounded-md"></div>
           <span className="text-red-500 font-semibold text-xl">Today's</span>
         </div>
-        <div className="flex space-x-20 mt-4 items-end">
+        <div className="flex flex-col md:flex-row space-x-20 mt-4 items-end">
           <div className="text-4xl font-bold">Flash Sales</div>
           <div className="flex space-x-4">
             <div className="text-center">
