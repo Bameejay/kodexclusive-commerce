@@ -16,7 +16,7 @@ const SignupPage = () => {
   });
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex flex-col md:flex-row">
       <div className="w-1/2 bg-blue-100 flex items-center justify-center">
         <img
           src={PhoneCart}
