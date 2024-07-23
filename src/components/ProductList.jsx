@@ -2,12 +2,17 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
-import { faEye, faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faArrowLeft,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
-import gamepad from '../assets/images/product_images/gamepad.png'
-import Keyboard from '../assets/images/product_images/wire keyboard.png'
-import monitor from '../assets/images/product_images/lcd gaming monitor.png'
-import chair from '../assets/images/product_images/5-series comfort chair.png'
+import gamepad from "../assets/images/product_images/gamepad.png";
+import Keyboard from "../assets/images/product_images/wire keyboard.png";
+import monitor from "../assets/images/product_images/lcd gaming monitor.png";
+import chair from "../assets/images/product_images/5-series comfort chair.png";
 
 const products = [
   {
@@ -88,17 +93,24 @@ const ProductList = () => {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex + productsPerPage < products.length ? prevIndex + productsPerPage : 0
+      prevIndex + productsPerPage < products.length
+        ? prevIndex + productsPerPage
+        : 0
     );
   };
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex - productsPerPage >= 0 ? prevIndex - productsPerPage : products.length - productsPerPage
+      prevIndex - productsPerPage >= 0
+        ? prevIndex - productsPerPage
+        : products.length - productsPerPage
     );
   };
 
-  const displayedProducts = products.slice(currentIndex, currentIndex + productsPerPage);
+  const displayedProducts = products.slice(
+    currentIndex,
+    currentIndex + productsPerPage
+  );
 
   return (
     <div className="container mx-auto py-10 mb-8">
@@ -106,31 +118,30 @@ const ProductList = () => {
         <Wishlist favoriteProducts={favoriteProducts} products={products} />
       ) : (
         <div>
-
-            <div className="flex">
-                <div></div>
+          <div className="flex">
+            <div></div>
             {/* Navigation Arrows */}
-          <div className="flex gap-4 mb-4 ml-auto">
-            <button
-              className="bg-[#F5F5F5] rounded-full flex items-center p-2 shadow-md"
-              onClick={handlePrev}
-            >
-              <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
-            </button>
-            <button
-              className="bg-[#F5F5F5] rounded-full p-2 shadow-md flex items-center"
-              onClick={handleNext}
-            >
-              <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
-            </button>
-          </div>
+            <div className="flex gap-4 mb-4 ml-auto">
+              <button
+                className="bg-[#F5F5F5] rounded-full flex items-center p-2 shadow-md"
+                onClick={handlePrev}
+              >
+                <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
+              </button>
+              <button
+                className="bg-[#F5F5F5] rounded-full p-2 shadow-md flex items-center"
+                onClick={handleNext}
+              >
+                <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {displayedProducts.map((product) => (
               <div
                 key={product.id}
-                className=" hover:shadow-lg transition-shadow duration-300"
+                className="hover:shadow-lg transition-shadow duration-300 relative group"
               >
                 <div className="relative">
                   <img
@@ -203,6 +214,14 @@ const ProductList = () => {
                       ({product.reviews})
                     </span>
                   </div>
+                </div>
+                <div className="absolute bottom-24 left-0 right-0 py-4 px-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Link
+                    to="/cart"
+                    className="block text-center bg-black text-white py-2 rounded-sm"
+                  >
+                    Add to Cart
+                  </Link>
                 </div>
               </div>
             ))}

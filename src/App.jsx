@@ -7,6 +7,7 @@ import NoPage from "./components/NoPage";
 import ProductList from "./components/ProductList";
 import Cart from "./components/carts";
 import Wishlist from './components/Wishlist'
+import SignupPage from "./components/Signup";
 
 
 
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="cart" element={<Cart />} />
           <Route path="productList" element={<ProductList />} />
           <Route path="wishList" element={<Wishlist />} />
+          <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
