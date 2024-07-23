@@ -82,15 +82,15 @@ const Navbar = () => {
                 placeholder="What are you looking for?"
                 className="border-none focus:outline-none bg-gray-200 text-sm hidden"
               />
-              <IoSearchOutline className="text-gray-500 ml-2" />
+              <IoSearchOutline className="text-gray-500 ml-2 hidden" />
             </div>
             {/* Wish List Icon */}
             <Link to="/">
-              <IoIosHeartEmpty className="w-6 h-6" />
+              <IoIosHeartEmpty className="w-6 h-6 hidden" />
             </Link>
             {/* Cart Icon */}
             <Link to="/">
-              <IoCartOutline className="w-6 h-6" />
+              <IoCartOutline className="w-6 h-6 hidden" />
             </Link>
           </div>
         </div>
