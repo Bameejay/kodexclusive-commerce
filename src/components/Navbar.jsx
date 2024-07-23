@@ -64,7 +64,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={handleMobileMenuToggle}
-              className="mobile-menu-button flex"
+              className="mobile-menu-button"
             >
               {isMobileMenuOpen ? (
                 <FaTimes className="w-6 h-6" />
@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
 
           {/* Search and Cart Section */}
-          <div className="hidden sm:flex gap-4 items-center">
+          <div className="hidden  gap-4 items-center">
             <div className="flex items-center p-2 border rounded-lg bg-gray-200">
               <input
                 type="text"
