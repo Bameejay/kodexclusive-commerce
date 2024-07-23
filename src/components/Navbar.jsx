@@ -75,12 +75,12 @@ const Navbar = () => {
           </div>
 
           {/* Search and Cart Section */}
-          <div className="hidden  gap-4 items-center">
+          <div className="hidden sm:flex gap-4 items-center">
             <div className="flex items-center p-2 border rounded-lg bg-gray-200">
               <input
                 type="text"
                 placeholder="What are you looking for?"
-                className="border-none focus:outline-none bg-gray-200 text-sm"
+                className="border-none focus:outline-none bg-gray-200 text-sm hidden"
               />
               <IoSearchOutline className="text-gray-500 ml-2" />
             </div>
