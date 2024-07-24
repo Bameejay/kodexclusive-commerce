@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NoPage = () => {
   return (
     <div className="font-semibold flex justify-between align-center items-center space-y-4">
-      <h1>404 Not Found</h1>
+      <h1 className="text-4xl text-center">404 Not Found</h1>
       <p>Your visited page not found. You may go home page.</p>
       <Link
         to="/login"

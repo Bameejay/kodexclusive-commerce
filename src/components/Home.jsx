@@ -52,7 +52,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container md:mx-auto px-4 md:px-0">
       {/* <div className="flex mb-20">
 
         <div className="w-1/4 flex mt-4 mb-20">
@@ -161,7 +161,7 @@ const Home = () => {
           <div className="bg-primaryColor w-4 h-10 mr-4 rounded-md"></div>
           <span className="text-red-500 font-semibold text-xl">Today's</span>
         </div>
-        <div className="flex flex-col items-center space-x-20 mt-4 md:items-end md:flex-row">
+        <div className="flex flex-col items-center md:space-x-20 mt-4 md:items-end md:flex-row">
           <div className="text-4xl font-bold">Flash Sales</div>
           <div className="flex space-x-4">
             <div className="text-center">
