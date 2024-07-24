@@ -5,3 +5,14 @@
 body {
     font-family: "Roboto", sans-serif;
 }
+
+.placeholder-red-asterisk::placeholder {
+    color: gray;
+    /* Default color for placeholder text */
+}
+
+.placeholder-red-asterisk::placeholder::after {
+    content: "* ";
+    color: red;
+    /* Red color for the asterisk */
+}
