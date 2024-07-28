@@ -1,9 +1,9 @@
-import { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from "react";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

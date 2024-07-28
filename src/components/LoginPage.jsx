@@ -18,7 +18,7 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
-      <div className="md:w-1/2 w-full bg-blue-100 flex items-center justify-center mt-8 mb-36">
+      <div className="md:w-1/2 w-full bg-blue-100 flex items-center justify-center md:mt-10 md:mb-24">
         <img
           src={PhoneCart}
           alt="Shopping cart and mobile phone"
