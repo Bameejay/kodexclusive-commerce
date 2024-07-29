@@ -28,7 +28,7 @@ const Navbar = () => {
         </select>
       </div>
 
-      <nav className="relative container bg-white mx-auto py-2 px-4">
+      <nav className="relative container bg-white mx-auto py-2 px-4 md:px-0">
         {/* Flex container */}
         <div className="flex items-center justify-between">
           {/* Logo */}

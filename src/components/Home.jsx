@@ -54,8 +54,8 @@ const Home = () => {
   return (
     <div className="container md:mx-auto px-4 md:px-0">
 
-<div className="flex flex-col md:flex-row mb-20">
-  {/* Left Section */}
+{/* <div className="flex flex-col md:flex-row mb-20">
+
   <div className="w-full hidden md:w-1/4 md:flex flex-col md:flex-row mt-4 mb-20">
     <ul className="space-y-5 text-sm md:mb-0 mb-4">
       <li>
@@ -95,7 +95,6 @@ const Home = () => {
     <div className="hidden md:block w-0.5 bg-gray-400 ml-2 -mt-8"></div>
   </div>
 
-  {/* Right Section */}
   <div className="w-full mt-4 hero-image">
     <img
       src={heroImage}
@@ -103,7 +102,60 @@ const Home = () => {
       className="object-contain bg-red-600 w-full"
     />
   </div>
-</div>
+</div> */}
+
+<div className="flex flex-col md:flex-row mb-2">
+      {/* Left Section */}
+      <div className="hidden md:flex flex-col w-1/4 mt-2 mb-10">
+        <ul className="flex flex-col justify-between h-full text-sm space-y-3.5">
+          <li>
+            <Link to="/" className="flex items-center justify-between">
+              <span>Woman's Fashion</span>
+              <FaGreaterThan className="ml-auto" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/" className="flex items-center justify-between">
+              <span>Men's Fashion</span>
+              <FaGreaterThan className="ml-auto" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/">Electronics</Link>
+          </li>
+          <li>
+            <Link to="/">Home & Lifestyle</Link>
+          </li>
+          <li>
+            <Link to="/">Medicine</Link>
+          </li>
+          <li>
+            <Link to="/">Sports & Outdoor</Link>
+          </li>
+          <li>
+            <Link to="/">Baby's & Toys</Link>
+          </li>
+          <li>
+            <Link to="/">Groceries & Pets</Link>
+          </li>
+          <li>
+            <Link to="/">Health & Beauty</Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Divider */}
+      <div className="hidden md:flex bg-gray-400 w-0.5 h-80 -m-8 mx-4"></div>
+
+      {/* Right Section */}
+      <div className="w-full mt-2">
+        <img
+          src={heroImage}
+          alt="hero_image"
+          className="object-contain bg-red-600 w-full"
+        />
+      </div>
+    </div>
 
 
       {/* Flash Sale */}

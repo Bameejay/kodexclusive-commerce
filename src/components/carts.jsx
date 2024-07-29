@@ -1,7 +1,7 @@
 
 const CartPage = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-8 md:px-0">
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white">
           <thead>
