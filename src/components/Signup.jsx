@@ -1,10 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 import PhoneCart from "../assets/images/signup_images/phone_cart2.png";
 import googleIcon from "../assets/images/signup_images/google_icon.png";
 
 const SignupPage = () => {
+  const navigate = useNavigate();
+  
   const validationSchema = Yup.object({
     name: Yup.string().required("Name is required"),
     email: Yup.string()
@@ -14,6 +18,15 @@ const SignupPage = () => {
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
   });
+
+  const handleSignup = async (values) => {
+    try {
+      await createUserWithEmailAndPassword(auth, values.email, values.password);
+      navigate('/loggedInAccount');
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
+  };
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
@@ -31,10 +44,7 @@ const SignupPage = () => {
           <Formik
             initialValues={{ name: "", email: "", password: "" }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              // Handle form submission
-              console.log(values);
-            }}
+            onSubmit={handleSignup}
           >
             <Form className="mt-8 space-y-6">
               <div className="rounded-md shadow-sm space-y-6">

@@ -1,13 +1,15 @@
-// import { FaGoogle } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 import PhoneCart from "../assets/images/signup_images/phone_cart2.png";
 import googleIcon from "../assets/images/signup_images/google_icon.png";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  
   const validationSchema = Yup.object({
-    name: Yup.string().required("Name is required"),
     email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
@@ -16,26 +18,31 @@ const LoginPage = () => {
       .required("Password is required"),
   });
 
+  const handleLogin = async (values) => {
+    try {
+      await signInWithEmailAndPassword(auth, values.email, values.password);
+      navigate('/loggedInAccount');
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       <div className="md:w-1/2 w-full bg-blue-100 flex items-center justify-center md:mt-10 md:mb-24">
         <img
           src={PhoneCart}
           alt="Shopping cart and mobile phone"
-          //   className="w-3/4"
         />
       </div>
       <div className="md:w-1/2 w-full flex flex-col md:flex items-center justify-center">
         <div className="max-w-md w-full space-y-4">
-          <h2 className="text-3xl font-medium text-black">Create an account</h2>
-          <p className=" text-sm text-black">Enter your details below</p>
+          <h2 className="text-3xl font-medium text-black">Log in to your account</h2>
+          <p className="text-sm text-black">Enter your details below</p>
           <Formik
-            initialValues={{ name: "", email: "", password: "" }}
+            initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
-            onSubmit={(values) => {
-              // Handle form submission
-              console.log(values);
-            }}
+            onSubmit={handleLogin}
           >
             <Form className="mt-8 space-y-6">
               <div className="rounded-md shadow-sm space-y-6">
@@ -79,28 +86,20 @@ const LoginPage = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between">
-              <div className="">
-                {/* <button
+                <button
                   type="submit"
                   className="py-3 px-8 border border-transparent text-sm font-medium rounded-sm text-white bg-primaryColor hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 >
                   Log in
-                </button> */}
-                <Link
-                    to="/"
-                    className="py-3 px-8 border border-transparent text-sm font-medium rounded-sm text-white bg-primaryColor hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                  >
-                    Log in
-                  </Link>
-              </div>
-              <div className="ml-auto">
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center py-4 px-4 rounded-md text-xs font-medium text-primaryColor focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:text-red-400"
-                >
-                  Forgot Password?
                 </button>
-              </div>
+                <div className="ml-auto">
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center py-4 px-4 rounded-md text-xs font-medium text-primaryColor focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 hover:text-red-400"
+                  >
+                    Forgot Password?
+                  </button>
+                </div>
               </div>
             </Form>
           </Formik>

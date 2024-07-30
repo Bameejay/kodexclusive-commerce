@@ -1,26 +1,24 @@
-import { useState } from "react";
+// ProductList.js
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as solidHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as regularHeart } from "@fortawesome/free-regular-svg-icons";
-import {
-  faEye,
-  faArrowLeft,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEye, faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Wishlist from "./Wishlist";
 import gamepad from "../assets/images/product_images/gamepad.png";
 import Keyboard from "../assets/images/product_images/wire keyboard.png";
 import monitor from "../assets/images/product_images/lcd gaming monitor.png";
 import chair from "../assets/images/product_images/5-series comfort chair.png";
+import { useCart } from './CartContext';
 
 const products = [
   {
     id: 1,
     discount: "40%",
     name: "HAVIT HV-G92 Gamepad",
-    currentPrice: "$120",
-    originalPrice: "$160",
+    currentPrice: 120,
+    originalPrice: 160,
     rating: 4.5,
     reviews: 38,
     imageUrl: gamepad,
@@ -29,8 +27,8 @@ const products = [
     id: 2,
     discount: "35%",
     name: "AK-900 Wired Keyboard",
-    currentPrice: "$60",
-    originalPrice: "$160",
+    currentPrice: 60,
+    originalPrice: 160,
     rating: 4.8,
     reviews: 75,
     imageUrl: Keyboard,
@@ -39,8 +37,8 @@ const products = [
     id: 3,
     discount: "30%",
     name: "IPS LCD Gaming Monitor",
-    currentPrice: "$370",
-    originalPrice: "$400",
+    currentPrice: 370,
+    originalPrice: 400,
     rating: 4.9,
     reviews: 99,
     imageUrl: monitor,
@@ -49,8 +47,8 @@ const products = [
     id: 4,
     discount: "25%",
     name: "S-Series Comfort Chair",
-    currentPrice: "$375",
-    originalPrice: "$400",
+    currentPrice: 375,
+    originalPrice: 400,
     rating: 4.7,
     reviews: 69,
     imageUrl: chair,
@@ -59,8 +57,8 @@ const products = [
     id: 5,
     discount: "20%",
     name: "S-Series Comfort Sofa",
-    currentPrice: "$450",
-    originalPrice: "$550",
+    currentPrice: 450,
+    originalPrice: 550,
     rating: 4.8,
     reviews: 50,
     imageUrl: chair,
@@ -68,12 +66,13 @@ const products = [
   // Add more products as needed
 ];
 
-const ProductList = () => {
+const ProductList = ({ onAddToCart }) => {
   const [favoriteProducts, setFavoriteProducts] = useState([]);
   const [viewedProducts, setViewedProducts] = useState([]);
   const [showWishlist, setShowWishlist] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const productsPerPage = 4;
+  const { addToCart } = useCart();
 
   const toggleFavorite = (productId) => {
     setFavoriteProducts((prev) =>
@@ -188,10 +187,10 @@ const ProductList = () => {
                   <h3 className="text-lg font-semibold">{product.name}</h3>
                   <div className="flex items-center space-x-2 mt-2">
                     <span className="text-xl font-bold text-red-500">
-                      {product.currentPrice}
+                      ${product.currentPrice}
                     </span>
                     <span className="text-sm line-through text-gray-500">
-                      {product.originalPrice}
+                      ${product.originalPrice}
                     </span>
                   </div>
                   <div className="flex items-center mt-2">
@@ -216,12 +215,12 @@ const ProductList = () => {
                   </div>
                 </div>
                 <div className="absolute bottom-24 left-0 right-0 py-4 px-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link
-                    to="/cart"
-                    className="block text-center bg-black text-white py-2 rounded-sm"
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="block text-center bg-black text-white py-2 rounded-sm w-full"
                   >
                     Add to Cart
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))}

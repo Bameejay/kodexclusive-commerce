@@ -1,33 +1,25 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
-import Blogs from "./components/Blogs";
 import Contact from "./components/Contact";
 import NoPage from "./components/NoPage";
 import ProductList from "./components/ProductList";
 import Cart from "./components/carts";
-import Wishlist from './components/Wishlist'
+import Wishlist from './components/Wishlist';
 import SignupPage from "./components/Signup";
 import LoginPage from "./components/LoginPage";
 import AboutPage from "./components/AboutPage";
-// import { auth } from './firebase';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-
-
-
-// const PrivateRoute = ({ children }) => {
-//   const [user] = useAuthState(auth);
-//   return user ? children : <Navigate to="/login" />;
-// };
-
+import LoggedInAccount from "./components/LoggedInAccount";
+import PrivateRoute from '../src/PrivateRoute';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Main routes using default Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
+          <Route path="loggedInAccount" element={<PrivateRoute><LoggedInAccount /></PrivateRoute>} />
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
           <Route path="productList" element={<ProductList />} />
@@ -37,6 +29,25 @@ export default function App() {
           <Route path="about" element={<AboutPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
+        {/* Specific route configurations */}
+        <Route path="about" element={<Layout showFooter={true}/>}>
+          <Route index element={<AboutPage />} />
+        </Route>
+        <Route path="contact" element={<Layout showFooter={true} />}>
+          <Route index element={<Contact />} />
+        </Route>
+        <Route path="loggedInAccount" element={<Layout showNavbar={false} />}>
+          <Route index element={<LoggedInAccount />} />
+        </Route>
+        <Route path="cart" element={<Layout showNavbar={false} />}>
+          <Route index element={<Cart />} />
+        </Route>
+        {/* <Route path="cart" element={<Cart showNavbar={false} showFooter={true} />}>
+          <Route index element={<Cart />} />
+        </Route> */}
+        {/* <Route path="login" element={<Layout showNavbar={false} showFooter={false} />}>
+          <Route index element={<LoginPage />} />
+        </Route> */}
       </Routes>
     </BrowserRouter>
   );

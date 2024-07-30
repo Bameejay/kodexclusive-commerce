@@ -25,7 +25,7 @@ const NoPage = () => {
             <div>
             <Link
               to="/"
-              className="bg-primaryColor text-white text-xs px-6 py-2 rounded hover:bg-red-600"
+              className="bg-primaryColor text-white text-xs px-8 py-3 rounded-sm hover:bg-red-600"
             >
               Back to home page
             </Link>

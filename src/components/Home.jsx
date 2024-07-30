@@ -54,55 +54,6 @@ const Home = () => {
   return (
     <div className="container md:mx-auto px-4 md:px-0">
 
-{/* <div className="flex flex-col md:flex-row mb-20">
-
-  <div className="w-full hidden md:w-1/4 md:flex flex-col md:flex-row mt-4 mb-20">
-    <ul className="space-y-5 text-sm md:mb-0 mb-4">
-      <li>
-        <Link to="" className="flex items-center gap-4 md:gap-[52px]">
-          Woman's Fashion
-          <FaGreaterThan />
-        </Link>
-      </li>
-      <li>
-        <Link to="" className="flex items-center gap-4 md:gap-20">
-          Men's Fashion
-          <FaGreaterThan />
-        </Link>
-      </li>
-      <li>
-        <Link to="">Electronics</Link>
-      </li>
-      <li>
-        <Link to="">Home & Lifestyle</Link>
-      </li>
-      <li>
-        <Link to="">Medicine</Link>
-      </li>
-      <li>
-        <Link to="">Sports & Outdoor</Link>
-      </li>
-      <li>
-        <Link to="">Baby's & Toys</Link>
-      </li>
-      <li>
-        <Link to="">Groceries & Pets</Link>
-      </li>
-      <li>
-        <Link to="">Health & Beauty</Link>
-      </li>
-    </ul>
-    <div className="hidden md:block w-0.5 bg-gray-400 ml-2 -mt-8"></div>
-  </div>
-
-  <div className="w-full mt-4 hero-image">
-    <img
-      src={heroImage}
-      alt="hero_image"
-      className="object-contain bg-red-600 w-full"
-    />
-  </div>
-</div> */}
 
 <div className="flex flex-col md:flex-row mb-2">
       {/* Left Section */}
@@ -338,7 +289,7 @@ const Home = () => {
           <p className="text-xs">We return money within 30 days</p>
         </div>
       </div>
-      <Link to="/accountDropdown">To account dropdown</Link>
+      {/* <Link to="/accountDropdown">To account dropdown</Link> */}
       <ScrollToTopButton/>
     </div>
   );

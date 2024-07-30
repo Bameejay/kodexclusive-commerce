@@ -1,20 +1,15 @@
-import { Outlet, Link } from "react-router-dom";
-import Navbar from './Navbar'
-import Footer from './Footer'
-import Home from './Home';
+import { Outlet } from "react-router-dom";
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-
-
-const Layout = () => {
-    return (  
+const Layout = ({ showNavbar = true, showFooter = true }) => {
+    return (
         <>
-        <Navbar/>
-            {/* <Home/> */}
-            <Outlet/>
-        <Footer/>
-             
+            {showNavbar && <Navbar />}
+            <Outlet />
+            {showFooter && <Footer />}
         </>
     );
 }
- 
+
 export default Layout;
