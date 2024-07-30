@@ -110,7 +110,7 @@ const Home = () => {
 
 
       {/* Flash Sale */}
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         <div className="flex items-center">
           <div className="bg-primaryColor w-4 h-10 mr-4 rounded-md"></div>
           <span className="text-red-500 font-semibold text-xl">Today's</span>
