@@ -123,7 +123,7 @@ const Cart = () => {
                 </p>
                 <div className="flex px-14 text-center">
                   <Link
-                    to="/productList"
+                    to="/checkoutPage"
                     className="bg-red-500 text-white py-2 px-2 rounded-xs w-full mt-4 text-xs hover:bg-red-700"
                   >
                     Proceed to checkout
