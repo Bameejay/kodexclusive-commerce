@@ -209,7 +209,7 @@ const CheckoutPage = () => {
 {/* Order Summary Section */}
         <div className="flex flex-col space-y-4">
           {/* <h2 className="text-xl font-bold mb-4">Order Summary</h2> */}
-          <div className="bg-white p-8">
+          <div className="bg-white">
             {cartItems.map((item) => (
               <div
                 key={item.id}
@@ -221,9 +221,9 @@ const CheckoutPage = () => {
                     alt={item.name}
                     className="w-16 h-16 object-cover mr-2"
                   />
-                  <span>{item.name}</span>
+                  <span className="text-xs">{item.name}</span>
                 </div>
-                <div className="text-right">
+                <div className="text-right text-xs">
                   <span className="block">
                     ${(item.currentPrice * item.quantity).toFixed(2)}
                   </span>
@@ -232,15 +232,15 @@ const CheckoutPage = () => {
             ))}
             <div className="pt-4">
               <div className="space-y-4">
-                <div className="flex justify-between mb-2">
+                <div className="flex justify-between mb-2 text-xs">
                   <span>Subtotal:</span>
                   <span>${cartTotal.toFixed(2)}</span>
                 </div>
-                <div className="flex border-t justify-between mb-2">
+                <div className="flex border-t justify-between mb-2 text-xs">
                   <span>Shipping:</span>
                   <span>Free</span>
                 </div>
-                <div className="flex border-t justify-between font-bold">
+                <div className="flex border-t justify-between font-bold text-xs">
                   <span>Total:</span>
                   <span>${cartTotal.toFixed(2)}</span>
                 </div>
@@ -258,7 +258,7 @@ const CheckoutPage = () => {
                         className="form-radio"
                         {...formik.getFieldProps("paymentMethod")}
                       />
-                      <span className="ml-2">Bank</span>
+                      <span className="ml-2 text-xs">Bank</span>
                     </label>
                     <label className="inline-flex items-center mb-2">
                       <input
@@ -268,7 +268,7 @@ const CheckoutPage = () => {
                         className="form-radio"
                         {...formik.getFieldProps("paymentMethod")}
                       />
-                      <span className="ml-2">Cash on delivery</span>
+                      <span className="ml-2 text-xs">Cash on delivery</span>
                     </label>
                   </div>
                 </div>
