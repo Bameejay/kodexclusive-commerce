@@ -37,6 +37,21 @@ const CheckoutPage = () => {
 
   return (
     <div className="container mx-auto py-10 px-4 md:px-0">
+      <div className="text-sm mb-6">
+          <ul className="flex space-x-2 items-center">
+            <li className="text-gray-500 text-xs">
+              <a href="/" className="text-gray-400">Account</a>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-400 text-xs">My Account</li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-400 text-xs">Product</li>
+            <li className="text-gray-400">/</li>
+            <li className="text-gray-400 text-xs">View Cart</li>
+            <li className="text-gray-400">/</li>
+            <li className="text-black text-xs">Checkout</li>
+          </ul>
+        </div>
       <h2 className="text-xl font-bold mb-4">Billing Details</h2>
       <div className="flex flex-col md:flex-row gap-6">
         <div className="md:w-1/2">
@@ -296,7 +311,7 @@ const CheckoutPage = () => {
                 </div>
                 <button
                   type="submit"
-                  className="bg-red-500 text-white py-2 px-6 rounded-xs mt-4 text-xs"
+                  className="bg-red-500 text-white py-2 px-6 rounded-xs mt-4 text-xs hover:bg-red-700"
                 >
                   Place Order
                 </button>
