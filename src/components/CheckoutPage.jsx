@@ -276,15 +276,17 @@ const CheckoutPage = () => {
                   {/* <label className="block text-sm font-bold mb-2" htmlFor="couponCode">
                 Coupon Code
               </label> */}
-                  <div className="flex flex-col md:flex-row justify-between">
+                  <div className="flex flex-col md:flex-row justify-between gap-4 items-center">
+                    <div>
                     <input
                       type="text"
                       id="couponCode"
                       name="couponCode"
                       placeholder="Coupon Code"
-                      className="w-full px-3 py-2 border rounded-l-md focus:outline-none focus:ring focus:border-blue-300"
+                      className="px-3 py-2 border border-black rounded-l-xs focus:outline-none text-xs"
                       {...formik.getFieldProps("couponCode")}
                     />
+                    </div>
                     <div>
                       <button className="bg-primaryColor text-white text-xs py-2 px-6 rounded-sm hover:bg-red-700">
                         Apply Coupon
@@ -294,7 +296,7 @@ const CheckoutPage = () => {
                 </div>
                 <button
                   type="submit"
-                  className="bg-red-500 text-white py-2 px-4 rounded-md w-full mt-4"
+                  className="bg-red-500 text-white py-2 px-6 rounded-xs mt-4 text-xs"
                 >
                   Place Order
                 </button>
