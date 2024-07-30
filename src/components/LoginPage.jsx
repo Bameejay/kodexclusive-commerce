@@ -28,7 +28,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row">
+    <div className="min-h-screen flex flex-col md:flex-row px-4 md:px-4">
       <div className="md:w-1/2 w-full bg-blue-100 flex items-center justify-center md:mt-10 md:mb-24">
         <img
           src={PhoneCart}
@@ -36,7 +36,7 @@ const LoginPage = () => {
         />
       </div>
       <div className="md:w-1/2 w-full flex flex-col md:flex items-center justify-center">
-        <div className="max-w-md w-full space-y-4">
+        <div className="max-w-md w-full space-y-4 mt-20 md:mt-0 ">
           <h2 className="text-3xl font-medium text-black">Log in to your account</h2>
           <p className="text-sm text-black">Enter your details below</p>
           <Formik

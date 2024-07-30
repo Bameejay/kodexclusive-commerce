@@ -63,7 +63,7 @@ const Cart = () => {
                             updateQuantity(item.id, parseInt(e.target.value))
                           }
                         >
-                          {[...Array(10).keys()].map((x) => (
+                          {[...Array(100).keys()].map((x) => (
                             <option key={x + 1} value={x + 1}>
                               {x + 1}
                             </option>
@@ -101,7 +101,7 @@ const Cart = () => {
                   />
                 </div>
                 <div>
-                  <button className="bg-primaryColor text-white text-xs py-2 px-6 rounded-sm">
+                  <button className="bg-primaryColor text-white text-xs py-2 px-6 rounded-sm hover:bg-red-700">
                     Apply Coupon
                   </button>
                 </div>
