@@ -55,7 +55,7 @@ const CheckoutPage = () => {
                 className={`w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring ${
                   formik.touched.firstName && formik.errors.firstName
                     ? "border-red-500"
-                    : "focus:border-blue-300"
+                    : "focus:border-none"
                 }`}
                 {...formik.getFieldProps("firstName")}
               />
@@ -76,7 +76,7 @@ const CheckoutPage = () => {
                 type="text"
                 id="companyName"
                 name="companyName"
-                className="w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring focus:border-blue-300"
+                className="w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none"
                 {...formik.getFieldProps("companyName")}
               />
             </div>
@@ -94,7 +94,7 @@ const CheckoutPage = () => {
                 className={`w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring ${
                   formik.touched.streetAddress && formik.errors.streetAddress
                     ? "border-red-500"
-                    : "focus:border-blue-300"
+                    : "focus:border-none"
                 }`}
                 {...formik.getFieldProps("streetAddress")}
               />
@@ -133,7 +133,7 @@ const CheckoutPage = () => {
                 className={`w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring ${
                   formik.touched.city && formik.errors.city
                     ? "border-red-500"
-                    : "focus:border-blue-300"
+                    : "focus:border-none"
                 }`}
                 {...formik.getFieldProps("city")}
               />
@@ -155,7 +155,7 @@ const CheckoutPage = () => {
                 className={`w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring ${
                   formik.touched.phoneNumber && formik.errors.phoneNumber
                     ? "border-red-500"
-                    : "focus:border-blue-300"
+                    : "focus:border-none"
                 }`}
                 {...formik.getFieldProps("phoneNumber")}
               />
@@ -179,7 +179,7 @@ const CheckoutPage = () => {
                 className={`w-96 px-3 py-2 border bg-gray-100 rounded-sm focus:outline-none focus:ring ${
                   formik.touched.emailAddress && formik.errors.emailAddress
                     ? "border-red-500"
-                    : "focus:border-blue-300"
+                    : "focus:border-none"
                 }`}
                 {...formik.getFieldProps("emailAddress")}
               />
@@ -193,7 +193,7 @@ const CheckoutPage = () => {
               <label className="inline-flex items-center">
                 <input
                   type="checkbox"
-                  className="form-checkbox bg-primaryColor text-white"
+                  className="form-checkbox bg-primaryColor text-white custom-checker"
                   name="saveInfo"
                   {...formik.getFieldProps("saveInfo")}
                 />
