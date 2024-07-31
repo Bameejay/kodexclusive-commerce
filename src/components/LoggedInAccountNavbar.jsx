@@ -104,7 +104,7 @@ const LoggedInAccountNavbar = () => {
             {/* Account Icon */}
             <div className="relative">
               <button onClick={handleAccountMenuToggle} className="flex items-center">
-                <FaUserCircle className="w-6 h-6 hidden md:flex" />
+                <FaUserCircle className="w-6 h-6 hidden md:flex hover:text-primaryColor" />
               </button>
               {isAccountMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg">
