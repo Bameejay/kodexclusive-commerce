@@ -2,10 +2,10 @@ import { Outlet, Link } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoIosHeartEmpty } from "react-icons/io";
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
-import { FaUserCircle } from 'react-icons/fa'; // Importing the account icon
-import { useCart } from './CartContext';
+import { FaUserCircle } from "react-icons/fa"; // Importing the account icon
+import { useCart } from "./CartContext";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { LuShoppingBag } from "react-icons/lu";
 import { MdOutlineCancel } from "react-icons/md";
@@ -108,16 +108,49 @@ const LoggedInAccountNavbar = () => {
             </Link>
             {/* Account Icon */}
             <div className="relative">
-              <button onClick={handleAccountMenuToggle} className="flex items-center">
+              <button
+                onClick={handleAccountMenuToggle}
+                className="flex items-center"
+              >
                 <FaUserCircle className="w-6 h-6 hidden md:flex hover:text-primaryColor" />
               </button>
               {isAccountMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-[#413242] rounded-lg shadow-lg">
-                  <Link to="/account" className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"><RiAccountCircleLine className="w-6 h-6" />Manage My Account</Link>
-                  <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"><LuShoppingBag className="w-6 h-6"/>My Order</Link>
-                  <Link to="/cancellations" className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"><MdOutlineCancel className="w-6 h-6"/>My Cancellations</Link>
-                  <Link to="/reviews" className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"><FaRegStar className="w-6 h-6"/>My Reviews</Link>
-                  <Link to="/login" className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"><BiLogOut className="w-6 h-6"/>Logout</Link>
+                  <Link
+                    to="/profilePage"
+                    className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"
+                  >
+                    <RiAccountCircleLine className="w-6 h-6" />
+                    Manage My Account
+                  </Link>
+                  <Link
+                    to="/orders"
+                    className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"
+                  >
+                    <LuShoppingBag className="w-6 h-6" />
+                    My Order
+                  </Link>
+                  <Link
+                    to="/cancellations"
+                    className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"
+                  >
+                    <MdOutlineCancel className="w-6 h-6" />
+                    My Cancellations
+                  </Link>
+                  <Link
+                    to="/reviews"
+                    className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"
+                  >
+                    <FaRegStar className="w-6 h-6" />
+                    My Reviews
+                  </Link>
+                  <Link
+                    to="/login"
+                    className="block px-4 py-2 text-sm text-gray-700 text-white hover:bg-gray-100 flex flex-row items-center gap-1 text-xs hover:text-[#413242]"
+                  >
+                    <BiLogOut className="w-6 h-6" />
+                    Logout
+                  </Link>
                 </div>
               )}
             </div>

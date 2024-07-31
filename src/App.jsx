@@ -12,6 +12,7 @@ import AboutPage from "./components/AboutPage";
 import LoggedInAccount from "./components/LoggedInAccount";
 import PrivateRoute from '../src/PrivateRoute';
 import CheckoutPage from "./components/CheckoutPage";
+import ProfilePage from "./components/ProfilePage";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="productList" element={<ProductList />} />
           <Route path="wishList" element={<Wishlist />} />
           <Route path="checkoutPage" element={<CheckoutPage />} />
+          <Route path="profilePage" element={<ProfilePage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="login" element={<LoginPage />} />
           <Route path="about" element={<AboutPage />} />
@@ -37,6 +39,9 @@ export default function App() {
         </Route>
         <Route path="contact" element={<Layout showFooter={true} />}>
           <Route index element={<Contact />} />
+        </Route>
+        <Route path="profilePage" element={<Layout showNavbar={false} />}>
+          <Route index element={<ProfilePage />} />
         </Route>
         <Route path="loggedInAccount" element={<Layout showNavbar={false} />}>
           <Route index element={<LoggedInAccount />} />
