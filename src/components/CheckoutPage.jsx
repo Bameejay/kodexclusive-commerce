@@ -3,6 +3,10 @@ import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useCart } from "./CartContext";
+import bKash from "../assets/images/cart_images/bkash.png"
+import visa from "../assets/images/cart_images/visa.png"
+import masterCard from "../assets/images/cart_images/mastercard.png"
+import OtherBrand from "../assets/images/cart_images/other_brand.png"
 
 const CheckoutPage = () => {
   const { cartItems, cartTotal } = useCart();
@@ -265,7 +269,8 @@ const CheckoutPage = () => {
                 <div className="mb-4 mt-2">
                   {/* <h3 className="text-lg font-bold mb-2">Payment Method</h3> */}
                   <div className="flex flex-col">
-                    <label className="inline-flex items-center mb-2">
+                    <div className="flex flex-row items-center align-center mb-2">
+                    <label className="inline-flex items-center">
                       <input
                         type="radio"
                         name="paymentMethod"
@@ -275,6 +280,14 @@ const CheckoutPage = () => {
                       />
                       <span className="ml-2 text-xs">Bank</span>
                     </label>
+                    <div className="flex gap-2 ml-auto items-center">
+                        <img src={bKash} alt="" className="object-contain"/>
+                        <img src={visa} alt="" className="object-contain"/>
+                        <img src={masterCard} alt="" className="object-contain"/>
+                        <img src={OtherBrand} alt="" className="object-contain"/>
+                      </div>
+                    </div>
+                    
                     <label className="inline-flex items-center mb-2">
                       <input
                         type="radio"
