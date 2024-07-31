@@ -178,12 +178,12 @@ const LoggedInAccountNavbar = () => {
             >
               About
             </Link>
-            <Link
+            {/* <Link
               to="/signup"
               className="block text-sm text-secondaryColor font-medium"
             >
               Sign Up
-            </Link>
+            </Link> */}
             <div className="flex gap-4 items-center w-full">
               <div className="flex items-center p-2 border rounded-lg bg-gray-200 w-full">
                 <input
