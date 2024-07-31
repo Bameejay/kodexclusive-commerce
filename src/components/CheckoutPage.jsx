@@ -309,12 +309,14 @@ const CheckoutPage = () => {
                     </div>
                   </div>
                 </div>
+                <div className="flex justify-center items-center md:justify-start">
                 <button
                   type="submit"
                   className="bg-red-500 text-white py-2 px-6 rounded-xs mt-4 text-xs hover:bg-red-700"
                 >
                   Place Order
                 </button>
+                </div>
               </div>
             </div>
           </div>

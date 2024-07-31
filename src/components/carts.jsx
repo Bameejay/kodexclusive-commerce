@@ -107,7 +107,7 @@ const Cart = () => {
                 </div>
               </div>
 
-              <div className="border border-gray-500 rounded-md border-x-2 space-y-2 border-y-2 p-4 w-1/3">
+              <div className="border border-gray-500 rounded-md border-x-2 space-y-2 border-y-2 p-4 w-full md:w-1/3 mt-4 md:mt-0">
                 <h3 className="font-bold mb-4 text-sm">Cart Total</h3>
                 <p className="flex justify-between">
                   <span className="text-sm">Subtotal:</span>
