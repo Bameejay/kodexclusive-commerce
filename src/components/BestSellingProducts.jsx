@@ -227,22 +227,22 @@ const ProductList = () => {
           <div className="flex-1 flex-col space-y-10">
             <p className="text-[#00FF66] text-sm">Categories</p>
             <h3 className="text-4xl text-white font-semibold">Enhance Your Music Experience </h3>
-            <div className="flex flex-row space-x-2">
+            <div className="flex gap-4 flex-wrap md:flex-row space-x-2 justify-center md:justify-start md:mx-0 md:gap-0">
               <div className="text-center rounded-full w-16 h-auto bg-white p-2 text-black">
-                <p className="text-sm font-bold">23</p>
-                <p className="text-sm">Hours</p>
+                <p className="text-xs font-bold">23</p>
+                <p className="text-xs">Hours</p>
               </div>
               <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">05</p>
-                <p className="text-sm">Days</p>
+                <p className="text-xs font-bold">05</p>
+                <p className="text-xs">Days</p>
               </div>
               <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">59</p>
-                <p className="text-sm">Minutes</p>
+                <p className="text-xs font-bold">59</p>
+                <p className="text-xs">Minutes</p>
               </div>
               <div className="text-center rounded-full bg-white w-16 h-auto p-2 text-black">
-                <p className="text-sm font-bold">35</p>
-                <p className="text-sm">seconds</p>
+                <p className="text-xs font-bold">35</p>
+                <p className="text-xs">seconds</p>
               </div>
             </div>
             <div><button className="bg-[#00FF66] py-2 px-6 text-sm font-bold text-white rounded-sm hover:bg-green-600 transition duration-300">Buy Now!</button></div>

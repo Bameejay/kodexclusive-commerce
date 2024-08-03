@@ -52,7 +52,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container md:mx-auto px-4 md:px-0">
+    <div className="container md:mx-auto px-4 md:px-4">
 
 
 <div className="flex flex-col md:flex-row mb-2">
@@ -116,8 +116,8 @@ const Home = () => {
           <span className="text-red-500 font-semibold text-xl">Today's</span>
         </div>
         <div className="flex flex-col items-center md:space-x-20 mt-4 md:items-end md:flex-row">
-          <div className="text-4xl font-bold">Flash Sales</div>
-          <div className="flex space-x-4">
+          <div className="font-bold md:text-4xl">Flash Sales</div>
+          <div className="flex flex-wrap items-center md:flex-nowrap space-x-4">
             <div className="text-center">
               <div className="text-lg text-gray-500 font-bold">Days</div>
               <div className="countdown-number text-4xl font-bold">

@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="bg-black flex justify-between items-center p-2">
+      <div className="bg-black flex justify-between items-center p-2 md:px-4">
         <p className="hidden sm:block"></p>
         <p className="text-xs text-white text-center sm:text-left">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
@@ -28,7 +28,7 @@ const Navbar = () => {
         </select>
       </div>
 
-      <nav className="relative container bg-white mx-auto py-2 px-4 md:px-0">
+      <nav className="relative container bg-white mx-auto py-2 px-4 md:px-4">
         {/* Flex container */}
         <div className="flex items-center justify-between">
           {/* Logo */}
