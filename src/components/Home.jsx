@@ -272,7 +272,7 @@ const Home = () => {
       </div>
 
       {/* Delivery Section */}
-      <div className="flex flex-col md:flex-row justify-between mx-20 mb-24 space-y-6">
+      <div className="flex flex-col md:flex-row justify-between mb-20 items-center">
         <div className="flex flex-col space-y-2 items-center">
           <img src={fastAndFree} alt="free and fast delivery" className="w-20 h-auto"/>
           <h2 className="font-bold">FREE AND FAST DELIVERY</h2>
