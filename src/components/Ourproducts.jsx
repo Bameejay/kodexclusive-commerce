@@ -199,7 +199,7 @@ const ProductList = () => {
                     </button>
                   </div>
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 p-2">
                   <h3 className="text-lg font-semibold">{product.name}</h3>
                   <div className="flex items-center space-x-2 mt-2">
                     <span className="text-xl font-bold text-red-500">
