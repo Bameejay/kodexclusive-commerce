@@ -12,6 +12,9 @@ const Footer = () => {
     <div className="bg-black divide-y divide-gray-600">
       <footer className=" container mx-auto py-4 px-0 md:px-4 text-white dark:bg-gray-100 dark:text-gray-800">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+
+<div className="flex flex-wrap md:flex-nowrap ps-4 md:ps-0 gap-14">
+          {/* First Column */}
           <div className="space-y-6 ">
             <span className="self-center text-lg font-semibold">Exclusive</span>
             <h3 className="text-sm">Subscribe</h3>
@@ -25,6 +28,8 @@ const Footer = () => {
               <TbSend2 className="absolute top-2 left-32" />
             </div>
           </div>
+
+          {/* Second Column */}
           <div className="space-y-6">
             <h3 className="tracking-wide uppercase dark:text-gray-900">
               Support
@@ -36,6 +41,8 @@ const Footer = () => {
             <p>exclusive@gmail.com</p>
             <p>+88015-88888-9999</p>
           </div>
+
+          {/* Third Column */}
           <div className="space-y-6">
             <h3 className="tracking-wide uppercase dark:text-gray-900">
               Account
@@ -68,6 +75,11 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          </div>
+
+          <div className="flex flex-wrap ps-4 md:ps-0 gap-10">
+
+          {/* Forth Column */}
           <div className="space-y-6">
             <h3 className="uppercase dark:text-gray-900">Quick Link</h3>
             <ul className="space-y-4">
@@ -93,6 +105,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Firth Column */}
           <div className="space-y-6">
             <h3 className="uppercase dark:text-gray-900">Download App</h3>
             <p className="text-sm">Save $3 with App New User Only</p>
@@ -129,6 +143,8 @@ const Footer = () => {
             </div>
           </div>
           {/* </div> */}
+        </div>
+
         </div>
       </footer>
       <div className="py-6 text-sm text-center text-white dark:text-gray-600">
